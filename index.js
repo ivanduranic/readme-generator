@@ -1,4 +1,5 @@
 var fs = require('fs');
+var inquirer = require('inquirer');
 
 // array of questions for user
 const questions = [
@@ -22,10 +23,14 @@ function writeToFile(fileName, data) {
       });
 }
 
+
 // function to initialize program
 function init() {
+    inquirer.prompt(questions).then(function(data){
+        writeToFile("file.md", `<ul> <li>My name is ${data.userName}</li><li>I am ${data.age} years young</li</ul>`)
+    })
 
 }
 
 // function call to initialize program
-// init();
+init();
