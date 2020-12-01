@@ -5,13 +5,33 @@ var inquirer = require('inquirer');
 const questions = [
     {
         type: "input",
-        name: "userName",
-        message: "What is your name?"
+        name: "title",
+        message: "What is the title of your project README?"
     },
     {
         type: "input",
-        name: "age",
-        message: "How young are you?"
+        name: "description",
+        message: "Write a short description explaining the what, why, and how. What was your motivation? Why did you build this project? What problem does it solve? What did you learn? What makes your project stand out?"
+    },
+    {
+        type: "input",
+        name: "installation",
+        message: "What are the steps required to install your project?"
+    },
+    {
+        type: "input",
+        name: "usage",
+        message: "Provide instructions and examples for use."
+    },
+    {
+        type: "input",
+        name: "license",
+        message: "What license do you choose for your project?"
+    },
+    {
+        type: "input",
+        name: "contributing",
+        message: "Add guidelines so that other developers can contribute to your project."
     }
 ];
 
@@ -20,14 +40,25 @@ function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, function (err) {
         if (err) throw err;
         console.log('File created!');
-      });
+    });
 }
 
 
 // function to initialize program
 function init() {
-    inquirer.prompt(questions).then(function(data){
-        writeToFile("file.md", `<ul> <li>My name is ${data.userName}</li><li>I am ${data.age} years young</li</ul>`)
+    inquirer.prompt(questions).then(function (data) {
+        writeToFile("README.md",
+        `${data.title}
+        Description
+         ${data.description}
+        Installation
+         ${data.installation}
+        Usage
+         ${data.usage}
+        License
+         ${data.license}
+        Contributing
+         ${data.contributing}`)
     })
 
 }
