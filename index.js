@@ -24,9 +24,10 @@ const questions = [
         message: "Provide instructions and examples for use."
     },
     {
-        type: "input",
+        type: "list",
         name: "license",
-        message: "What license do you choose for your project?"
+        message: "What license do you choose for your project?",
+        choices: ['GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla Public License 2.0', 'Apache License 2.0', 'MIT License', 'Boost Software License 1.0', 'The Unlicense']
     },
     {
         type: "input",
@@ -47,18 +48,24 @@ function writeToFile(fileName, data) {
 // function to initialize program
 function init() {
     inquirer.prompt(questions).then(function (data) {
-        writeToFile("README.md",
-        `${data.title}
-        Description
-         ${data.description}
-        Installation
-         ${data.installation}
-        Usage
-         ${data.usage}
-        License
-         ${data.license}
-        Contributing
-         ${data.contributing}`)
+        writeToFile("README2.md",
+`
+# ${data.title}
+
+##  Description
+    ${data.description}
+
+##  Installation
+    ${data.installation}
+
+##  Usage
+    ${data.usage}
+
+##  License
+    ${data.license}
+
+##  Contributing
+${data.contributing}`)
     })
 
 }
