@@ -33,6 +33,21 @@ const questions = [
         type: "input",
         name: "contributing",
         message: "Add guidelines so that other developers can contribute to your project."
+    },
+    {
+        type: "input",
+        name: "tests",
+        message: "If applicable, provide any tests written for your application and provide examples on how to run them."
+    },
+    {
+        type: "input",
+        name: "questions",
+        message: "Please enter you GitHub name."
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "Please enter you e-mail address."
     }
 ];
 
@@ -55,6 +70,14 @@ function init() {
 ##  Description
     ${data.description}
 
+##  Table of contents
+    Installation
+    Usage
+    License
+    Contributing
+    Tests
+    Questions
+
 ##  Installation
     ${data.installation}
 
@@ -65,7 +88,16 @@ function init() {
     ${data.license}
 
 ##  Contributing
-${data.contributing}`)
+    ${data.contributing}
+
+##  Tests
+    ${data.tests}
+
+##  Questions
+    github.com/${data.questions}
+    If you have any additional questions you can reach me at:
+    ${data.email}
+`)
     })
 
 }
