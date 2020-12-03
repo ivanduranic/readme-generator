@@ -51,7 +51,7 @@ const questions = [
     {
         type: "input",
         name: "questions",
-        message: "What can I do if I have an issue?"
+        message: "What can users do if they have an issue?"
     },
     {
         type: "input",
@@ -78,41 +78,7 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer.prompt(questions).then(function (data) {
         writeToFile("README2.md", generateMarkdown(data))
-// `
-// # ${data.title}
-
-// ##  Description
-//     ${data.description}
-
-// ##  Table of contents
-//     Installation
-//     Usage
-//     License
-//     Contributing
-//     Tests
-//     Questions
-
-// ##  Installation
-//     ${data.installation}
-
-// ##  Usage
-//     ${data.usage}
-
-// ##  License
-//     ${data.license}
-
-// ##  Contributing
-//     ${data.contributing}
-
-// ##  Tests
-//     ${data.tests}
-
-// ##  Questions
-//     github.com/${data.questions}
-//     If you have any additional questions you can reach me at:
-//     ${data.email}
-// `)
-    })
+    });
 
 }
 

@@ -27,6 +27,8 @@ The application itself can be invoked by running the command `node index.js`.
 
 ## Usage
 
+https://drive.google.com/file/d/1aFQad665uQ6is-vXTNcbNtCR_JrE_aPz/view
+
 When you run `node index.js` the application will prompt you, using the `inquirer` package, in the command line with a series of questions about your GitHub project.
 
 Application will then generate markdown for the README based on your responses to the inquirer prompts. 
