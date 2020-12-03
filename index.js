@@ -1,5 +1,6 @@
-var fs = require('fs');
-var inquirer = require('inquirer');
+const fs = require('fs');
+const inquirer = require('inquirer');
+const generateMarkdown = require('./utils/generateMarkdown');
 
 // array of questions for user
 const questions = [
@@ -42,7 +43,12 @@ const questions = [
     {
         type: "input",
         name: "questions",
-        message: "Please enter you GitHub name."
+        message: "What can I do if I have an issue?"
+    },
+    {
+        type: "input",
+        name: "username",
+        message: "Please enter your GitHub username: "
     },
     {
         type: "input",
@@ -63,41 +69,41 @@ function writeToFile(fileName, data) {
 // function to initialize program
 function init() {
     inquirer.prompt(questions).then(function (data) {
-        writeToFile("README2.md",
-`
-# ${data.title}
+        writeToFile("README2.md", generateMarkdown(data))
+// `
+// # ${data.title}
 
-##  Description
-    ${data.description}
+// ##  Description
+//     ${data.description}
 
-##  Table of contents
-    Installation
-    Usage
-    License
-    Contributing
-    Tests
-    Questions
+// ##  Table of contents
+//     Installation
+//     Usage
+//     License
+//     Contributing
+//     Tests
+//     Questions
 
-##  Installation
-    ${data.installation}
+// ##  Installation
+//     ${data.installation}
 
-##  Usage
-    ${data.usage}
+// ##  Usage
+//     ${data.usage}
 
-##  License
-    ${data.license}
+// ##  License
+//     ${data.license}
 
-##  Contributing
-    ${data.contributing}
+// ##  Contributing
+//     ${data.contributing}
 
-##  Tests
-    ${data.tests}
+// ##  Tests
+//     ${data.tests}
 
-##  Questions
-    github.com/${data.questions}
-    If you have any additional questions you can reach me at:
-    ${data.email}
-`)
+// ##  Questions
+//     github.com/${data.questions}
+//     If you have any additional questions you can reach me at:
+//     ${data.email}
+// `)
     })
 
 }
