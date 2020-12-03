@@ -6,9 +6,17 @@ In order to present your project well, you are bound to have a quality README fi
 
 This is a command-line application that dynamically generates a professional README.md file from a user's input using the Inquirer Package.
 
+## Table of Contents
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Questions](#questions)
+
 ## Installation
 
-To generate your own README, first create a `.gitignore` file and include `node_modules/` and `.DS_Store/` so that your `node_modules` directory isn't tracked or uploaded to GitHub. Be sure to create your `.gitignore` file before installing any npm dependencies.
+To generate your own README, first create a `.gitignore` file and include `node_modules/` so that your `node_modules` directory isn't tracked or uploaded to GitHub. Be sure to create your `.gitignore` file before installing any npm dependencies.
 
 Secondly, make sure that your repo includes a `package.json` with the required dependencies. You can create one by running `npm init` when you first set up the project, before installing any dependencies.
 
@@ -32,6 +40,14 @@ MIT License
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## Questions
+
+Find me on GitHub: github.com/ivanduranic
+
+You can reach me with additional questions on: ivan.duranic@gmail.com
+
+<br><br>
 
 Respectfully,
 
